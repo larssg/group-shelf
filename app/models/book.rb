@@ -8,10 +8,13 @@ class Book
   property :title, String
   property :pages, Integer
   property :published, Date
+  property :description, Text
 
   belongs_to :publisher
   belongs_to :location
 
   has(n, :authorships)
   has(n, :authors, :through => :authorships)
+  
+  default_scope(:default).update(:order => [:title.asc])  
 end

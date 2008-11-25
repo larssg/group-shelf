@@ -3,5 +3,6 @@
   .field= text_field :title, :label => 'Title'
   .field= select :publisher_id, :label => 'Publisher', :collection => @publishers, :text_method => :name, :value_method => :id, :include_blank => true
   .field= text_field :pages, :label => 'Pages', :class => 'small'
+  .field= text_area :description, :label => 'Description'
   .field= select :location_id, :label => 'Location', :collection => @locations, :text_method => :name, :value_method => :id, :include_blank => true
   .field= submit(book.new_record? ? 'Create' : 'Update')

@@ -1,6 +1,6 @@
 class Front < Application
   def index
-    @books = Book.all(:order => [:title.asc])
+    @books = Book.all
     display @books
   end
 end

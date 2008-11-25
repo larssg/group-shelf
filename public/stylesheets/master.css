@@ -57,6 +57,9 @@
     #bd form .field label {
       display: block;
       font-weight: bold; }
+    #bd form .field textarea {
+      width: 30em;
+      height: 7em; }
     #bd form .field input.text {
       width: 30em; }
     #bd form .field input.small {
@@ -69,3 +72,8 @@
   padding-top: 0;
   font-size: 85%;
   color: #5F5F5F; }
+
+body.anonymous #menu {
+  border-top: 3px solid #98CAD5; }
+  body.anonymous #menu ul {
+    display: none; }

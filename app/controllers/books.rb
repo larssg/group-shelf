@@ -15,16 +15,16 @@ class Books < Application
   def new
     only_provides :html
     @book = Book.new
-    @publishers = Publisher.all(:order => [:name.asc])
-    @locations = Location.all(:order => [:name.asc])
+    @publishers = Publisher.all
+    @locations = Location.all
     display @book
   end
 
   def edit(id)
     only_provides :html
     @book = Book.get(id)
-    @publishers = Publisher.all(:order => [:name.asc])
-    @locations = Location.all(:order => [:name.asc])
+    @publishers = Publisher.all
+    @locations = Location.all
     raise NotFound unless @book
     display @book
   end
@@ -35,8 +35,8 @@ class Books < Application
       redirect resource(:books), :message => {:notice => "Book was successfully created"}
     else
       message[:error] = "Book failed to be created"
-      @publishers = Publisher.all(:order => [:name.asc])
-      @locations = Location.all(:order => [:name.asc])
+      @publishers = Publisher.all
+      @locations = Location.all
       render :new
     end
   end
@@ -47,8 +47,8 @@ class Books < Application
     if @book.update_attributes(book)
        redirect resource(@book)
     else
-      @publishers = Publisher.all(:order => [:name.asc])
-      @locations = Location.all(:order => [:name.asc])
+      @publishers = Publisher.all
+      @locations = Location.all
       display @book, :edit
     end
   end
