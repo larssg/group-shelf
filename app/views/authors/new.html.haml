@@ -1,13 +1,8 @@
-%h1 Authors controller, new action
-
-%p 
-  Edit this file in 
-  %tt app/views/authors/new.html.erb
+- title 'Add author'
 
 = error_messages_for :author
 
-= form_for(@author, :action => url(:authors) ) do
-  %p
-    = submit "Create"
+= partial :form, :author => @author
 
-= link_to 'Back', url(:authors)
+- throw_content :sidebar do
+  = link_to 'Back', resource(:authors)

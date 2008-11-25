@@ -16,4 +16,5 @@
       %label Pages:
       = @book.pages
 
-= link_to 'Edit',  url(:edit_book,  @book)
+- throw_content :sidebar do
+  = link_to 'Edit', url(:edit_book, @book)

@@ -3,4 +3,5 @@
 - for publisher in @publishers
   = partial :publisher, :publisher => publisher
 
-= link_to 'New', url(:new_publisher)
+- throw_content :sidebar do
+  = link_to 'Add publisher', url(:new_publisher)

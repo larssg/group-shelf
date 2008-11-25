@@ -1,0 +1,7 @@
+= form_for author, :action => (author.new_record? ? resource(:authors) : resource(author)) do
+  .field
+    = label 'Name', :for => :name
+    = text_field :name
+
+  .field
+    = submit(author.new_record? ? 'Create' : 'Update')
