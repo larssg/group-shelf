@@ -6,7 +6,7 @@
     = css_include_tag 'reset-fonts-grids', :master, :bundle => true
     = include_required_css
   %body{ :class => session.authenticated? ? 'authenticated' : 'anonymous' }
-    #doc2{ :class => thrown_content?(:sidebar) ? 'yui-t4' : nil }
+    #doc2{ :class => thrown_content?(:sidebar) ? 'yui-t5' : nil }
       #hd
         %h1= link_to 'Group Shelf', '/'
         = partial 'common/menu'

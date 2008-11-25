@@ -49,9 +49,12 @@
     
   h2
     :font-weight bold
-
-  .book
+    
+  .book-short
     :margin-bottom 1em
+    
+    .stars
+      :float right
 
     .title
       :font-weight bold
@@ -66,17 +69,27 @@
       a
         :color #000000
         :text-decoration none
+
+  .book
+    .authors .author
+      :display inline
         
     #reviews
       :margin-top 1em
-      
+
+      h3
+        :font-weight bold
+        :margin-bottom 1em
+
       .review
         :margin-bottom 1em
-      
+        
+        .score
+          :float right
+
         .user, .age
           :display inline
           :color #999999
-          :font-size 85%
 
   form
     .field
