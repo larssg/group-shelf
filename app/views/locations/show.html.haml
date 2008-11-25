@@ -1,0 +1,11 @@
+- title @location.name
+
+%h2
+  Books at
+  = @location.name
+
+- @location.books.each do |book|
+  = partial 'books/book', :book => book
+
+- throw_content :sidebar do
+  = link_to 'Edit', url(:edit_location, @location)

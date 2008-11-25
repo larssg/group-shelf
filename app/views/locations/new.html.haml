@@ -1,0 +1,8 @@
+- title 'Add location'
+
+= error_messages_for :location
+
+= partial :form, :location => @location
+
+- throw_content :sidebar do
+  = link_to 'Back', resource(:locations)

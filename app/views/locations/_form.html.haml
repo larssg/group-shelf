@@ -1,0 +1,7 @@
+= form_for location, :action => (location.new_record? ? resource(:locations) : resource(location)) do
+  .field
+    = label 'Name', :for => :name
+    = text_field :name
+
+  .field
+    = submit(location.new_record? ? 'Create' : 'Update')

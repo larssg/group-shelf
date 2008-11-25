@@ -16,6 +16,7 @@ class Books < Application
     only_provides :html
     @book = Book.new
     @publishers = Publisher.all(:order => [:name.asc])
+    @locations = Location.all(:order => [:name.asc])
     display @book
   end
 
@@ -23,6 +24,7 @@ class Books < Application
     only_provides :html
     @book = Book.get(id)
     @publishers = Publisher.all(:order => [:name.asc])
+    @locations = Location.all(:order => [:name.asc])
     raise NotFound unless @book
     display @book
   end
@@ -34,6 +36,7 @@ class Books < Application
     else
       message[:error] = "Book failed to be created"
       @publishers = Publisher.all(:order => [:name.asc])
+      @locations = Location.all(:order => [:name.asc])
       render :new
     end
   end
@@ -45,6 +48,7 @@ class Books < Application
        redirect resource(@book)
     else
       @publishers = Publisher.all(:order => [:name.asc])
+      @locations = Location.all(:order => [:name.asc])
       display @book, :edit
     end
   end

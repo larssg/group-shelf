@@ -10,6 +10,7 @@ class Book
   property :published, Date
 
   belongs_to :publisher
+  belongs_to :location
 
   has(n, :authorships)
   has(n, :authors, :through => :authorships)

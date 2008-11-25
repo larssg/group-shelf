@@ -1,0 +1,7 @@
+- title 'Locations'
+
+- for location in @locations
+  = partial :location, :location => location
+
+- throw_content :sidebar do
+  = link_to 'Add location', url(:new_location)
