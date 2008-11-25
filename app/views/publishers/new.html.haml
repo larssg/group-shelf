@@ -1,0 +1,13 @@
+%h1 Publishers controller, new action
+
+%p 
+  Edit this file in 
+  %tt app/views/publishers/new.html.erb
+
+= error_messages_for :publisher
+
+= form_for(@publisher, :action => url(:publishers) ) do
+  %p
+    = submit "Create"
+
+= link_to 'Back', url(:publishers)

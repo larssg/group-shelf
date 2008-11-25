@@ -1,0 +1,8 @@
+- title @author.name
+
+%h2
+  Books by
+  = @author.name
+
+- @author.books.each do |book|
+  = partial 'books/book', :book => book

@@ -1,0 +1,7 @@
+- title 'Books'
+
+- @books.each do |book|
+  = partial :book, :book => book
+  
+- throw_content :sidebar do
+  = link_to 'Add book', url(:new_book)

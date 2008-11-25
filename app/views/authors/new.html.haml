@@ -1,0 +1,13 @@
+%h1 Authors controller, new action
+
+%p 
+  Edit this file in 
+  %tt app/views/authors/new.html.erb
+
+= error_messages_for :author
+
+= form_for(@author, :action => url(:authors) ) do
+  %p
+    = submit "Create"
+
+= link_to 'Back', url(:authors)

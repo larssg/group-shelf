@@ -1,0 +1,6 @@
+- title 'Authors'
+
+- for author in @authors
+  = partial :author, :author => author
+
+= link_to 'New', url(:new_author)

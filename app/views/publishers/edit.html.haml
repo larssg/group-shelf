@@ -1,0 +1,15 @@
+%h1
+  Publishers controller, edit action
+%p
+  Edit this file in
+  %tt
+    app/views/publishers/edit.html.erb
+= error_messages_for :publisher
+
+= form_for(@publisher, :action => url(:publisher, @publisher)) do
+  %p
+    = submit "Update"
+
+= link_to 'Show', url(:publisher, @publisher)
+|
+= link_to 'Back', url(:publishers)

@@ -1,0 +1,15 @@
+%h1
+  Authors controller, edit action
+%p
+  Edit this file in
+  %tt
+    app/views/authors/edit.html.erb
+= error_messages_for :author
+
+= form_for(@author, :action => url(:author, @author)) do
+  %p
+    = submit "Update"
+
+= link_to 'Show', url(:author, @author)
+|
+= link_to 'Back', url(:authors)

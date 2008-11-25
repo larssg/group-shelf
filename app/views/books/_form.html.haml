@@ -1,0 +1,15 @@
+= form_for book, :action => (book.new_record? ? resource(:books) : resource(book)) do
+  .field
+    = label 'Title', :for => :title
+    = text_field :title
+    
+  .field
+    = label 'Publisher', :for => :publisher
+    = select :publisher_id, :collection => @publishers, :text_method => :name, :value_method => :id, :include_blank => true
+
+  .field
+    = label 'Pages', :for => :pages
+    = text_field :pages, :class => 'small'
+
+  .field
+    = submit(book.new_record? ? 'Create' : 'Update')

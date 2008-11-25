@@ -1,0 +1,19 @@
+- title @book.title
+
+.book
+  .authors
+    by
+    - @book.authors.each do |author|
+      = partial 'authors/author', :author => author
+
+  - if @book.publisher
+    .publisher
+      %label Publisher:
+      = @book.publisher.name
+  
+  - if @book.pages.to_i > 0
+    .pages
+      %label Pages:
+      = @book.pages
+
+= link_to 'Edit',  url(:edit_book,  @book)

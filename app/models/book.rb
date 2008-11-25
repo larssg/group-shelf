@@ -1,7 +1,15 @@
 class Book
   include DataMapper::Resource
-  
+
   property :id, Serial
+  property :created_at, DateTime
+  property :updated_at, DateTime
+  property :title, String
+  property :pages, Integer
+  property :published, Date
 
+  belongs_to :publisher
 
+  has(n, :authorships)
+  has(n, :authors, :through => :authorships)
 end
