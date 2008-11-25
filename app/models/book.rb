@@ -15,6 +15,11 @@ class Book
 
   has(n, :authorships)
   has(n, :authors, :through => :authorships)
+  has(n, :reviews)
   
   default_scope(:default).update(:order => [:title.asc])  
+  
+  def stars
+    @stars ||= self.reviews.empty? ? 0.0 : ((self.reviews.avg(:score) * 2).round / 2.0)
+  end
 end

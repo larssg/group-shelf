@@ -1,0 +1,8 @@
+#reviews
+  %h3 Reviews
+  - book.reviews.each do |review|
+    .review{ :id => "review-#{review.id}" }
+      .score= '&#9733;' * review.score
+      .user= review.user.login
+      .age= "(#{time_lost_in_words(DateTime.now, review.created_at)} ago)"
+      .body= review.body

@@ -52,6 +52,14 @@
       #bd .book .authors .author a {
         color: #000000;
         text-decoration: none; }
+    #bd .book #reviews {
+      margin-top: 1em; }
+      #bd .book #reviews .review {
+        margin-bottom: 1em; }
+        #bd .book #reviews .review .user, #bd .book #reviews .review .age {
+          display: inline;
+          color: #999999;
+          font-size: 85%; }
   #bd form .field {
     margin-bottom: 1em; }
     #bd form .field label {

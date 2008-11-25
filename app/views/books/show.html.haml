@@ -1,6 +1,9 @@
 - title @book.title
 
 .book
+  .stars
+    ='&#9733;' * @book.stars + ((@book.stars == @book.stars.to_i) ? '' : '&#189;')
+
   .authors
     by
     - @book.authors.each do |author|
@@ -15,6 +18,16 @@
     .pages
       %label Pages:
       = @book.pages
+  
+  = partial 'reviews/for_book', :book => @book
+  
+  - if session.authenticated?
+    = form_for @review, :action => resource(:reviews), :class => 'review' do
+      = fieldset :legend => "Add a Review" do
+        .field= select :score, :collection => (1..5).map {|i| [i, '&#9733;' * i]}
+        .field= text_area :body
+        = hidden_field :book_id, :value => @book.id
+        .field= submit "Add Review"
 
 - throw_content :sidebar do
   = link_to 'Edit', url(:edit_book, @book)

@@ -1,5 +1,6 @@
 Merb.logger.info("Compiling routes...")
 Merb::Router.prepare do
+  resources :reviews
   authenticate do
     match('/').to(:controller => 'front', :action => 'index')
 

@@ -8,6 +8,7 @@ class Books < Application
 
   def show(id)
     @book = Book.get(id)
+    @review = Review.new
     raise NotFound unless @book
     display @book
   end
