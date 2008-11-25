@@ -6,3 +6,6 @@
 
 - @author.books.each do |book|
   = partial 'books/book', :book => book
+
+- throw_content :sidebar do
+  = link_to 'Edit', url(:edit_author, @author)

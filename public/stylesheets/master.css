@@ -61,6 +61,8 @@
       width: 30em; }
     #bd form .field input.small {
       width: 4em; }
+    #bd form .field input.medium {
+      width: 9em; }
 
 #ft {
   padding: 20px;

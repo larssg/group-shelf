@@ -15,6 +15,7 @@ class Books < Application
   def new
     only_provides :html
     @book = Book.new
+    @publishers = Publisher.all(:order => [:name.asc])
     display @book
   end
 
@@ -32,6 +33,7 @@ class Books < Application
       redirect resource(:books), :message => {:notice => "Book was successfully created"}
     else
       message[:error] = "Book failed to be created"
+      @publishers = Publisher.all(:order => [:name.asc])
       render :new
     end
   end
@@ -42,6 +44,7 @@ class Books < Application
     if @book.update_attributes(book)
        redirect resource(@book)
     else
+      @publishers = Publisher.all(:order => [:name.asc])
       display @book, :edit
     end
   end
