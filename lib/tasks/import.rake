@@ -5,9 +5,7 @@ namespace :group_shelf do
     FasterCSV.foreach(file, { :headers => :first_row }) do |row|
       book = Book.create(:isbn => row['ISBN'])
       begin
-        puts "Imported #{book.name}..."
-      rescue
-        nil
+        puts "Imported #{book.title}..."
       end
     end
   end

@@ -1,0 +1,9 @@
+require Merb.root / :lib / :providers / :amazon
+require Merb.root / :lib / :providers / :saxo
+
+Merb::Config.use do |c|
+  c[:book_providers] = [GroupShelf::Amazon, GroupShelf::Saxo]
+
+  c[:amazon_api_key] = '<AMAZON_API_KEY>'
+  c[:saxo_api_key] = '<SAXO_API_KEY>'
+end

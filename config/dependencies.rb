@@ -25,4 +25,5 @@ dependency "dm-validations", dm_gems_version
 dependency 'fastercsv'
 dependency 'curb'
 dependency 'isbn-tools', :require_as => 'isbn/tools'
-dependency "libxml-ruby", :require_as => "xml/libxml"
+dependency 'libxml-ruby', :require_as => 'xml/libxml'
+dependency 'hpricot'
