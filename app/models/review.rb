@@ -7,7 +7,7 @@ class Review
   property :score, Integer, :nullable => false, :index => true
 
   belongs_to :user
-  belongs_to :book
+  belongs_to :book, :index => true
 
   validates_present :user, :book
 

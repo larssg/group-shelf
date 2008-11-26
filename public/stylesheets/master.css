@@ -52,13 +52,18 @@
       #bd .book-short .title a {
         color: #000000;
         text-decoration: none; }
-    #bd .book-short .authors .author {
-      display: inline; }
-      #bd .book-short .authors .author a {
-        color: #000000;
-        text-decoration: none; }
-  #bd .book .authors .author {
-    display: inline; }
+    #bd .book-short a.author {
+      color: #000000;
+      text-decoration: none; }
+  #bd .book a.author {
+    color: #000000;
+    text-decoration: none; }
+  #bd .book .description {
+    border-top: 1px dotted #999999;
+    border-bottom: 1px dotted #999999;
+    margin-top: 1em;
+    padding-top: 1em;
+    padding-bottom: 1em; }
   #bd .book #reviews {
     margin-top: 1em; }
     #bd .book #reviews h3 {

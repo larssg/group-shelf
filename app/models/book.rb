@@ -52,6 +52,7 @@ class Book
     self.pages = data[:pages]
     self.published = data[:published]
     self.detail_url = data[:detail_url]
+    self.description = data[:description]
     
     data[:authors].each do |name|
       author = Author.first(:name => name) || Author.new(:name => name)

@@ -6,8 +6,7 @@
 
   .authors
     by
-    - @book.authors.each do |author|
-      = partial 'authors/author', :author => author
+    = partial 'authors/list', :authors => @book.authors
 
   - if @book.publisher
     .publisher
@@ -18,6 +17,10 @@
     .pages
       %label Pages:
       = @book.pages
+      
+  - if @book.description
+    .description
+      = @book.description
   
   = partial 'reviews/for_book', :book => @book
   

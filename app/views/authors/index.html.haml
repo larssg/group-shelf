@@ -1,7 +1,7 @@
 - title 'Authors'
 
 - for author in @authors
-  = partial :author, :author => author
+  .author= partial :author, :author => author
 
 - throw_content :sidebar do
   = link_to 'Add author', url(:new_author)
