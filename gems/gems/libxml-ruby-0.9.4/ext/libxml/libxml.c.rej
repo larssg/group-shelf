@@ -1,0 +1,16 @@
+***************
+*** 46,51 ****
+    ruby_init_xml_xinclude();
+    ruby_init_xml_xpath();
+    ruby_init_xml_xpath_context();
+    ruby_init_xml_xpointer();
+    ruby_init_xml_xpointer_context();
+    ruby_init_html_parser();
+--- 46,52 ----
+    ruby_init_xml_xinclude();
+    ruby_init_xml_xpath();
+    ruby_init_xml_xpath_context();
++   ruby_init_xml_xpath_expression();
+    ruby_init_xml_xpointer();
+    ruby_init_xml_xpointer_context();
+    ruby_init_html_parser();

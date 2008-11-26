@@ -13,6 +13,8 @@ Merb::Config.use do |c|
   # cookie session store configuration
   c[:session_secret_key]  = '191d0c08bbdbcf38a37a63fbfa20aa8c3c5bd9c5'  # required for cookie session store
   c[:session_id_key] = '_group_self_session_id' # cookie session id key, defaults to "_session_id"
+
+  c[:isbndb_key] = 'IKC2SJZJ'
 end
  
 Merb::BootLoader.before_app_loads do
@@ -21,4 +23,6 @@ end
  
 Merb::BootLoader.after_app_loads do
   # This will get executed after your app's classes have been loaded.
+  require Merb.root / :lib / :libxml_helper
+  require Merb.root / :lib / :isbndb
 end

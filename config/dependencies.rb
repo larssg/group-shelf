@@ -21,3 +21,8 @@ dependency "dm-migrations", dm_gems_version
 dependency "dm-timestamps", dm_gems_version   
 dependency "dm-types", dm_gems_version        
 dependency "dm-validations", dm_gems_version  
+
+dependency 'fastercsv'
+dependency 'curb'
+dependency 'isbn-tools', :require_as => 'isbn/tools'
+dependency "libxml-ruby", :require_as => "xml/libxml"

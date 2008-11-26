@@ -17,9 +17,31 @@ class Book
   has(n, :authors, :through => :authorships)
   has(n, :reviews)
   
-  default_scope(:default).update(:order => [:title.asc])  
+  after :create, :load_data
   
+  default_scope(:default).update(:order => [:title.asc])
+
   def stars
     @stars ||= self.reviews.empty? ? 0.0 : ((self.reviews.avg(:score) * 2).round / 2.0)
+  end
+
+  protected
+  def load_data
+    return unless self.title.blank?
+    return if self.isbn.blank?
+
+    data = ::ISBNDB.fetch_by_isbn(self.isbn)
+
+    self.title = data[:long_title]
+    self.title = data[:short_title] if self.title.strip.blank?
+    
+    data[:author].split(', ').each do |name|
+      author = Author.first(:name => name) || Author.new(:name => name)
+      Authorship.create(:book => self, :author => author)
+    end
+    
+    self.publisher = Publisher.first(:name => data[:publisher]) || Publisher.new(:name => data[:publisher])
+
+    save
   end
 end

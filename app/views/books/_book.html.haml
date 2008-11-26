@@ -1,6 +1,7 @@
 .book-short
   .stars
-    ='&#9733;' * book.stars + ((book.stars == book.stars.to_i) ? '' : '&#189;')
+    .count= "(#{book.reviews.count})"
+    = '&#9733;' * book.stars + ((book.stars == book.stars.to_i) ? '' : '&#189;')
 
   .title= link_to book.title, resource(book)
   .authors

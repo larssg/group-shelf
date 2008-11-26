@@ -44,6 +44,9 @@
     margin-bottom: 1em; }
     #bd .book-short .stars {
       float: right; }
+      #bd .book-short .stars .count {
+        display: inline;
+        color: #666666; }
     #bd .book-short .title {
       font-weight: bold; }
       #bd .book-short .title a {
@@ -67,7 +70,7 @@
         float: right; }
       #bd .book #reviews .review .user, #bd .book #reviews .review .age {
         display: inline;
-        color: #999999; }
+        color: #666666; }
   #bd form .field {
     margin-bottom: 1em; }
     #bd form .field label {
