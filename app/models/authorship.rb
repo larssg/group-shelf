@@ -4,5 +4,5 @@ class Authorship
   property :id, Serial
 
   belongs_to :author
-  belongs_to :book
+  belongs_to :item
 end

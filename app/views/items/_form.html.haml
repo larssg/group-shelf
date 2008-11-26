@@ -1,8 +1,8 @@
-= form_for book, :action => (book.new_record? ? resource(:books) : resource(book)) do
+= form_for item, :action => (item.new_record? ? resource(:items) : url(:item, item)) do
   .field= text_field :isbn, :label => 'ISBN', :class => 'medium'
   .field= text_field :title, :label => 'Title'
   .field= select :publisher_id, :label => 'Publisher', :collection => @publishers, :text_method => :name, :value_method => :id, :include_blank => true
   .field= text_field :pages, :label => 'Pages', :class => 'small'
   .field= text_area :description, :label => 'Description'
   .field= select :location_id, :label => 'Location', :collection => @locations, :text_method => :name, :value_method => :id, :include_blank => true
-  .field= submit(book.new_record? ? 'Create' : 'Update')
+  .field= submit(item.new_record? ? 'Create' : 'Update')

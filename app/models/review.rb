@@ -7,9 +7,9 @@ class Review
   property :score, Integer, :nullable => false, :index => true
 
   belongs_to :user
-  belongs_to :book, :index => true
+  belongs_to :item, :index => true
 
-  validates_present :user, :book
+  validates_present :user, :item
 
   default_scope(:default).update(:order => [:created_at.desc])
 end

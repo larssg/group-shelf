@@ -1,13 +1,13 @@
 Merb.logger.info("Compiling routes...")
 Merb::Router.prepare do
-  resources :reviews
   authenticate do
     match('/').to(:controller => 'front', :action => 'index')
 
-    resources :books
+    resources :items
     resources :locations
     resources :authors
     resources :publishers
+    resources :reviews
   end
 
   # Adds the required routes for merb-auth using the password slice

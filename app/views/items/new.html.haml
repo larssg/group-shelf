@@ -1,0 +1,8 @@
+- title 'Add item'
+
+= error_messages_for :item
+
+= partial :form, :item => @item
+
+- throw_content :sidebar do
+  = link_to 'Back', resource(:items)

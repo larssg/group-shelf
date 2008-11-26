@@ -1,6 +1,6 @@
 #reviews
   %h3 Reviews
-  - book.reviews.each do |review|
+  - item.reviews.each do |review|
     .review{ :id => "review-#{review.id}" }
       .score= '&#9733;' * review.score
       .user= review.user.login

@@ -1,5 +1,5 @@
 module Merb
-  module BooksHelper
+  module ItemsHelper
 
   end
 end # Merb

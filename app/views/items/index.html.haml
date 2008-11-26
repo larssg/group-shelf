@@ -1,0 +1,7 @@
+- title 'Items'
+
+- @items.each do |item|
+  = partial :item, :item => item
+  
+- throw_content :sidebar do
+  = link_to 'Add item', url(:new_item)

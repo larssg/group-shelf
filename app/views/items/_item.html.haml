@@ -1,0 +1,9 @@
+.item-short
+  .stars
+    .count= "(#{item.reviews.count})"
+    = '&#9733;' * item.stars + ((item.stars == item.stars.to_i) ? '' : '&#189;')
+
+  .title= link_to item.title, url(:item, item)
+  .authors
+    by
+    = partial 'authors/list', :authors => item.authors

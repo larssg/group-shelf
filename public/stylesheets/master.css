@@ -40,40 +40,40 @@
     padding-bottom: 15px; }
   #bd h2 {
     font-weight: bold; }
-  #bd .book-short {
+  #bd .item-short {
     margin-bottom: 1em; }
-    #bd .book-short .stars {
+    #bd .item-short .stars {
       float: right; }
-      #bd .book-short .stars .count {
+      #bd .item-short .stars .count {
         display: inline;
         color: #666666; }
-    #bd .book-short .title {
+    #bd .item-short .title {
       font-weight: bold; }
-      #bd .book-short .title a {
+      #bd .item-short .title a {
         color: #000000;
         text-decoration: none; }
-    #bd .book-short a.author {
+    #bd .item-short a.author {
       color: #000000;
       text-decoration: none; }
-  #bd .book a.author {
+  #bd .item a.author {
     color: #000000;
     text-decoration: none; }
-  #bd .book .description {
+  #bd .item .description {
     border-top: 1px dotted #999999;
     border-bottom: 1px dotted #999999;
     margin-top: 1em;
     padding-top: 1em;
     padding-bottom: 1em; }
-  #bd .book #reviews {
+  #bd .item #reviews {
     margin-top: 1em; }
-    #bd .book #reviews h3 {
+    #bd .item #reviews h3 {
       font-weight: bold;
       margin-bottom: 1em; }
-    #bd .book #reviews .review {
+    #bd .item #reviews .review {
       margin-bottom: 1em; }
-      #bd .book #reviews .review .score {
+      #bd .item #reviews .review .score {
         float: right; }
-      #bd .book #reviews .review .user, #bd .book #reviews .review .age {
+      #bd .item #reviews .review .user, #bd .item #reviews .review .age {
         display: inline;
         color: #666666; }
   #bd form .field {

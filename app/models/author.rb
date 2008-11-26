@@ -5,7 +5,7 @@ class Author
   property :name, String
 
   has(n, :authorships)
-  has(n, :books, :through => :authorships)
+  has(n, :items, :through => :authorships)
 
   default_scope(:default).update(:order => [:name.asc])  
 end

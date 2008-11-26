@@ -4,7 +4,7 @@ class Publisher
   property :id, Serial
   property :name, String
   
-  has(n, :books)
+  has(n, :items)
 
   default_scope(:default).update(:order => [:name.asc])  
 end

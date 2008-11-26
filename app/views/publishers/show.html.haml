@@ -1,11 +1,11 @@
 - title @publisher.name
 
 %h2
-  Books published by
+  Items published by
   = @publisher.name
 
-- @publisher.books.each do |book|
-  = partial 'books/book', :book => book
+- @publisher.items.each do |item|
+  = partial 'items/item', :item => item
   
 - throw_content :sidebar do
   = link_to 'Edit', url(:edit_publisher, @publisher)

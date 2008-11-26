@@ -1,36 +1,36 @@
-- title @book.title
+- title @item.title
 
-.book
+.item
   .stars
-    ='&#9733;' * @book.stars + ((@book.stars == @book.stars.to_i) ? '' : '&#189;')
+    ='&#9733;' * @item.stars + ((@item.stars == @item.stars.to_i) ? '' : '&#189;')
 
   .authors
     by
-    = partial 'authors/list', :authors => @book.authors
+    = partial 'authors/list', :authors => @item.authors
 
-  - if @book.publisher
+  - if @item.publisher
     .publisher
       %label Publisher:
-      = @book.publisher.name
+      = @item.publisher.name
   
-  - if @book.pages.to_i > 0
+  - if @item.pages.to_i > 0
     .pages
       %label Pages:
-      = @book.pages
+      = @item.pages
       
-  - if @book.description
+  - if @item.description
     .description
-      = @book.description
+      = @item.description
   
-  = partial 'reviews/for_book', :book => @book
+  = partial 'reviews/for_item', :item => @item
   
   - if session.authenticated?
     = form_for @review, :action => resource(:reviews), :class => 'review' do
       = fieldset :legend => "Add a Review" do
         .field= select :score, :collection => (1..5).map {|i| [i, '&#9733;' * i]}
         .field= text_area :body
-        = hidden_field :book_id, :value => @book.id
+        = hidden_field :item_id, :value => @item.id
         .field= submit "Add Review"
 
 - throw_content :sidebar do
-  = link_to 'Edit', url(:edit_book, @book)
+  = link_to 'Edit', url(:edit_item, @item)

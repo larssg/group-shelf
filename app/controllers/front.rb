@@ -1,6 +1,6 @@
 class Front < Application
   def index
-    @books = Book.all
-    display @books
+    @items = Item.latest
+    display @items
   end
 end
