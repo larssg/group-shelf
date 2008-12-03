@@ -28,7 +28,7 @@
         %label Pages:
         = @item.pages
 
-      - if @item.isbn
+      - if @item.isbn and !@item.isbn_10.blank?
         .isbn
           %label ISBN:
           = @item.isbn_10
