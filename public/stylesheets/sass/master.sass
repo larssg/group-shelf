@@ -49,9 +49,21 @@
     
   h2
     :font-weight bold
+    :padding-bottom 1em
     
   .item-short
     :margin-bottom 1em
+    :clear both
+    
+    .image
+      :float left
+      :width 60px
+      :margin-right 10px
+      :text-align right
+      :margin-bottom 1em
+      
+      img
+        :vertical-align bottom
     
     .stars
       :float right
@@ -66,22 +78,44 @@
       a
         :color #000000
         :text-decoration none
-      
-    a.author
-      :color #000000
-      :text-decoration none
+
+    .authors
+      :margin-left 70px
+
+      a.author
+        :color #000000
+        :text-decoration none
 
   .item
-    a.author
-      :color #000000
-      :text-decoration none
+    .image
+      :float left
+      :margin-right 1em
       
+      img
+        :vertical-align bottom
+      
+    .details
+      :margin-top 1em
+    
+      label
+        :font-weight bold
+        
+      .detail_link
+        :margin-top 1em
+
     .description
       :border-top 1px dotted #999999
       :border-bottom 1px dotted #999999
       :margin-top 1em
       :padding-top 1em
       :padding-bottom 1em
+      
+      p
+        :margin-top 1em
+        
+      li
+        :list-style disc
+        :margin-left 2em
 
     #reviews
       :margin-top 1em

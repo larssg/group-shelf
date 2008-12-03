@@ -30,9 +30,9 @@ class Items < Application
     display @item
   end
 
-  def create(item)
-    @item = Book.new(item)
-    if @item.save
+  def create(book)
+    @book = Book.new(book)
+    if @book.save
       redirect resource(:items), :message => {:notice => "Item was successfully created"}
     else
       message[:error] = "Item failed to be created"

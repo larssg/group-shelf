@@ -39,9 +39,19 @@
     font-weight: bold;
     padding-bottom: 15px; }
   #bd h2 {
-    font-weight: bold; }
+    font-weight: bold;
+    padding-bottom: 1em; }
   #bd .item-short {
-    margin-bottom: 1em; }
+    margin-bottom: 1em;
+    clear: both; }
+    #bd .item-short .image {
+      float: left;
+      width: 60px;
+      margin-right: 10px;
+      text-align: right;
+      margin-bottom: 1em; }
+      #bd .item-short .image img {
+        vertical-align: bottom; }
     #bd .item-short .stars {
       float: right; }
       #bd .item-short .stars .count {
@@ -52,18 +62,33 @@
       #bd .item-short .title a {
         color: #000000;
         text-decoration: none; }
-    #bd .item-short a.author {
-      color: #000000;
-      text-decoration: none; }
-  #bd .item a.author {
-    color: #000000;
-    text-decoration: none; }
+    #bd .item-short .authors {
+      margin-left: 70px; }
+      #bd .item-short .authors a.author {
+        color: #000000;
+        text-decoration: none; }
+  #bd .item .image {
+    float: left;
+    margin-right: 1em; }
+    #bd .item .image img {
+      vertical-align: bottom; }
+  #bd .item .details {
+    margin-top: 1em; }
+    #bd .item .details label {
+      font-weight: bold; }
+    #bd .item .details .detail_link {
+      margin-top: 1em; }
   #bd .item .description {
     border-top: 1px dotted #999999;
     border-bottom: 1px dotted #999999;
     margin-top: 1em;
     padding-top: 1em;
     padding-bottom: 1em; }
+    #bd .item .description p {
+      margin-top: 1em; }
+    #bd .item .description li {
+      list-style: disc;
+      margin-left: 2em; }
   #bd .item #reviews {
     margin-top: 1em; }
     #bd .item #reviews h3 {

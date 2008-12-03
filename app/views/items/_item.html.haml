@@ -1,4 +1,8 @@
 .item-short
+  - image = item.images.small
+  - if image
+    .image= link_to(image_tag(image.url), url(:item, item)) if image
+
   .stars
     .count= "(#{item.reviews.count})"
     = '&#9733;' * item.stars + ((item.stars == item.stars.to_i) ? '' : '&#189;')

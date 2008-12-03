@@ -1,6 +1,10 @@
 - title @item.title
 
 .item
+  - image = @item.images.medium
+  - if image
+    .image= image_tag(@item.images.medium.url)
+
   .stars
     ='&#9733;' * @item.stars + ((@item.stars == @item.stars.to_i) ? '' : '&#189;')
 
@@ -8,16 +12,34 @@
     by
     = partial 'authors/list', :authors => @item.authors
 
-  - if @item.publisher
-    .publisher
-      %label Publisher:
-      = @item.publisher.name
+  .details
+    - if @item.publisher
+      .publisher
+        %label Publisher:
+        = link_to @item.publisher.name, url(:publisher, @item.publisher)
+
+    - if @item.published
+      .published
+        %label Published:
+        = @item.published
   
-  - if @item.pages.to_i > 0
-    .pages
-      %label Pages:
-      = @item.pages
+    - if @item.pages.to_i > 0
+      .pages
+        %label Pages:
+        = @item.pages
+
+      - if @item.isbn
+        .isbn
+          %label ISBN:
+          = @item.isbn_10
       
+    - if @item.detail_url
+      .detail_link
+        = link_to 'More details', @item.detail_url, :target => '_blank'
+  
+  .clear
+    %hr
+  
   - if @item.description
     .description
       = @item.description
