@@ -8,6 +8,8 @@ class Item
   property :title, String, :length => 255, :nullable => false
   property :description, Text
   property :published, Date
+  property :stars, Float, :default => 0
+  property :reviews_count, Integer, :default => 0
 
   belongs_to :publisher
 
@@ -22,8 +24,8 @@ class Item
     all(:limit => how_many, :order => [:created_at.desc])
   end
 
-  def stars
-    @stars ||= ((self.reviews.avg(:score) * 2).round / 2.0)
+  def update_review_cache
+    self.stars = ((Review.avg(:score, :item_id => self.id) * 2).round / 2.0)
   end
 end
 

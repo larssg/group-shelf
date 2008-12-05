@@ -3,10 +3,11 @@
 .item
   - image = @item.images.medium
   - if image
-    .image= image_tag(@item.images.medium.url)
+    .image= item_image(@item.images.medium)
 
-  .stars
-    ='&#9733;' * @item.stars + ((@item.stars == @item.stars.to_i) ? '' : '&#189;')
+  - if @item.stars > 0
+    .stars
+      ='&#9733;' * @item.stars + ((@item.stars == @item.stars.to_i) ? '' : '&#189;')
 
   .authors
     by
