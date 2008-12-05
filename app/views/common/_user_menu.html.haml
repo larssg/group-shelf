@@ -1,0 +1,7 @@
+#user-menu
+  %ul
+    %li
+      %span
+        Logged in as
+        = session.user.login
+    %li= link_to 'Log out', url(:logout)

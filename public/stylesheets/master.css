@@ -1,7 +1,15 @@
+#doc3 {
+  margin: auto; }
+
 .clear {
   clear: both; }
   .clear hr {
     display: none; }
+
+.content {
+  margin: auto;
+  width: 950px;
+  text-align: left; }
 
 #hd {
   border-top: 3px solid #009ABF; }
@@ -11,29 +19,43 @@
     font-size: 153.9%; }
     #hd h1 a {
       display: block;
-      margin-left: 20px;
       margin-top: 10px;
       margin-bottom: 10px;
       text-decoration: none;
       color: #000000; }
-  #hd #menu {
-    background-color: #98CAD5;
-    padding-left: 10px; }
-    #hd #menu ul li {
-      display: inline; }
-      #hd #menu ul li a {
-        float: left;
-        padding: 5px;
-        padding-left: 10px;
-        padding-right: 10px;
-        text-decoration: none;
-        text-transform: uppercase;
-        color: #FFFFFF;
-        font-weight: bold;
-        font-size: 93%; }
+
+#menu {
+  background-color: #98CAD5; }
+  #menu ul li {
+    display: inline; }
+    #menu ul li a, #menu ul li span {
+      float: left;
+      padding: 5px;
+      padding-left: 10px;
+      padding-right: 10px;
+      font-size: 93%; }
+    #menu ul li a {
+      text-decoration: none;
+      text-transform: uppercase;
+      color: #FFFFFF;
+      font-weight: bold; }
+    #menu ul li span {
+      color: #F4F2E9; }
+  #menu #main-menu ul,   #menu #user-menu ul {
+    position: relative; }
+  #menu #main-menu ul {
+    left: -10px; }
+  #menu #user-menu {
+    float: right; }
+    #menu #user-menu ul {
+      left: 10px; }
 
 #bd {
-  padding: 20px; }
+  background-color: #F4F2E9;
+  padding-top: 20px;
+  padding-bottom: 20px; }
+  #bd a {
+    color: #009ABF; }
   #bd h1 {
     font-size: 130%;
     font-weight: bold;
@@ -41,6 +63,17 @@
   #bd h2 {
     font-weight: bold;
     padding-bottom: 1em; }
+  #bd #messages {
+    padding-bottom: 0.5em; }
+    #bd #messages span {
+      display: block;
+      padding: 5px;
+      margin-bottom: 0.5em; }
+      #bd #messages span.notice {
+        background-color: #A2D18F;
+        border-width: 1px;
+        border-style: solid;
+        border-color: #84b371; }
   #bd .item-short {
     margin-bottom: 1em;
     clear: both; }
@@ -64,9 +97,6 @@
         text-decoration: none; }
     #bd .item-short .authors {
       margin-left: 70px; }
-      #bd .item-short .authors a.author {
-        color: #000000;
-        text-decoration: none; }
   #bd .item .image {
     float: left;
     margin-right: 1em; }
@@ -76,7 +106,7 @@
     margin-top: 1em; }
     #bd .item .details label {
       font-weight: bold; }
-    #bd .item .details .detail_link {
+    #bd .item .details .added_date, #bd .item .details .detail_link {
       margin-top: 1em; }
   #bd .item .description {
     border-top: 1px dotted #999999;
@@ -118,7 +148,6 @@
 
 #ft {
   padding: 20px;
-  padding-top: 0;
   font-size: 85%;
   color: #5F5F5F; }
 

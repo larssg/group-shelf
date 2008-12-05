@@ -1,8 +1,16 @@
+#doc3
+  :margin auto
+
 .clear
   :clear both
 
   hr
     :display none
+    
+.content
+  :margin auto
+  :width 950px
+  :text-align left
 
 #hd
   :border-top 3px solid #009ABF
@@ -14,43 +22,79 @@
 
     a
       :display block
-      :margin-left 20px
       :margin-top 10px
       :margin-bottom 10px
       :text-decoration none
       :color #000000
       
-  #menu
-    :background-color #98CAD5
-    :padding-left 10px
-    
-    ul
-      li
-        :display inline
+#menu
+  :background-color #98CAD5
+
+  ul
+    li
+      :display inline
+      
+      a, span
+        :float left
+        :padding 5px
+        :padding-left 10px
+        :padding-right 10px
+        :font-size 93%
+
+      a
+        :text-decoration none
+        :text-transform uppercase
+        :color #FFFFFF
+        :font-weight bold
         
-        a
-          :float left
-          :padding 5px
-          :padding-left 10px
-          :padding-right 10px
-          :text-decoration none
-          :text-transform uppercase
-          :color #FFFFFF
-          :font-weight bold
-          :font-size 93%
+      span
+        :color #F4F2E9
+
+  #main-menu, #user-menu
+    ul
+      :position relative
+
+  #main-menu
+    ul
+      :left -10px
+
+  #user-menu
+    :float right
+  
+    ul
+      :left 10px
 
 #bd
-  :padding 20px
+  :background-color #F4F2E9
+  :padding-top 20px
+  :padding-bottom 20px
+
+  a
+    :color #009ABF
 
   h1
     :font-size 130%
     :font-weight bold
     :padding-bottom 15px
-    
+
   h2
     :font-weight bold
     :padding-bottom 1em
     
+  #messages
+    :padding-bottom 0.5em
+    
+    span
+      :display block
+      :padding 5px
+      :margin-bottom 0.5em
+      
+      &.notice
+        :background-color #A2D18F
+        :border-width 1px
+        :border-style solid
+        :border-color = #A2D18F - 30
+
   .item-short
     :margin-bottom 1em
     :clear both
@@ -82,10 +126,6 @@
     .authors
       :margin-left 70px
 
-      a.author
-        :color #000000
-        :text-decoration none
-
   .item
     .image
       :float left
@@ -93,14 +133,14 @@
       
       img
         :vertical-align bottom
-      
+
     .details
       :margin-top 1em
     
       label
         :font-weight bold
         
-      .detail_link
+      .added_date, .detail_link
         :margin-top 1em
 
     .description
@@ -157,7 +197,6 @@
 
 #ft
   :padding 20px
-  :padding-top 0
   :font-size 85%
   :color #5F5F5F
   

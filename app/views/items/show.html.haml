@@ -3,17 +3,17 @@
 .item
   - image = @item.images.medium
   - if image
-    .image= item_image(@item.images.medium)
+    .image= item_image(image)
 
   - if @item.stars > 0
     .stars
       ='&#9733;' * @item.stars + ((@item.stars == @item.stars.to_i) ? '' : '&#189;')
 
-  .authors
+  .authors{ :style => padding_style(image) }
     by
     = partial 'authors/list', :authors => @item.authors
 
-  .details
+  .details{ :style => padding_style(image) }
     - if @item.publisher
       .publisher
         %label Publisher:
@@ -33,6 +33,10 @@
         .isbn
           %label ISBN:
           = @item.isbn_10
+    
+    .added_date
+      %label Added to library:
+      = @item.created_at
       
     - if @item.detail_url
       .detail_link

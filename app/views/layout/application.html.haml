@@ -6,30 +6,40 @@
     = css_include_tag 'reset-fonts-grids', :master, :bundle => true
     = include_required_css
   %body{ :class => session.authenticated? ? 'authenticated' : 'anonymous' }
-    #doc2{ :class => thrown_content?(:sidebar) ? 'yui-t5' : nil }
+    #doc3{ :class => thrown_content?(:sidebar) ? 'yui-t5' : nil }
       #hd
-        %h1= link_to 'Group Shelf', '/'
-        = partial 'common/menu'
+        .content
+          %h1= link_to 'Group Shelf', '/'
+          
+      #menu
+        .content
+          = partial 'common/user_menu'
+          = partial 'common/menu'
+
+          .clear
+            %hr
 
       #bd
-        - if page_title
-          %h1= page_title
-          
-        #yui-main
-          .yui-b
-            - [:notice, :warning, :error].each do |error_level|
-              - if message[error_level]
-                .message
-                  %span{ :class => error_level }= message[error_level]
-
-            #content
-              = catch_content :for_layout
+        .content
+          - if page_title
+            %h1= page_title
         
-        - if thrown_content?(:sidebar)
-          .yui-b
-            = catch_content :sidebar
+          #yui-main
+            .yui-b
+              - [:notice, :warning, :error].each do |error_level|
+                - if message[error_level]
+                  #messages
+                    %span{ :class => error_level }= message[error_level]
+
+              #content
+                = catch_content :for_layout
+      
+          - if thrown_content?(:sidebar)
+            .yui-b
+              = catch_content :sidebar
 
       #ft
-        &copy; Copyright 2008 Lenio A/S
+        .content
+          &copy; Copyright 2008 Lenio A/S
         
     = include_required_js
