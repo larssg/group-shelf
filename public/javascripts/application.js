@@ -1,1 +1,3 @@
-// Common JavaScript code across your application goes here.
+$(function() {
+    $('.item .image a').lightBox();
+});

@@ -1,7 +1,8 @@
-#user-menu
-  %ul
-    %li
-      %span
-        Logged in as
-        = session.user.login
-    %li= link_to 'Log out', url(:logout)
+- if session.authenticated?
+  #user-menu
+    %ul
+      %li
+        %span
+          Logged in as
+          = session.user.login
+      %li= link_to 'Log out', url(:logout)

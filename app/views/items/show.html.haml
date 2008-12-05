@@ -1,9 +1,14 @@
+- require_js 'jquery', 'jquery.lightbox', 'application'
 - title @item.title
 
 .item
   - image = @item.images.medium
+  - large_image = @item.images.large
   - if image
-    .image= item_image(image)
+    - if large_image
+      .image= link_to item_image(image), large_image.url
+    - else
+      .image= item_image(image)
 
   - if @item.stars > 0
     .stars
