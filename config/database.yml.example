@@ -1,0 +1,35 @@
+---
+# This is a sample database file for the DataMapper ORM
+development: &defaults
+  # These are the settings for repository :default
+  adapter:  mysql
+  database: group_shelf_development
+  host: localhost
+  socket: /opt/local/var/run/mysql5/mysqld.sock
+ 
+  # Add more repositories
+  # repositories:
+  #   repo1:
+  #     adapter:  sqlite3
+  #     database: sample_1_development.db
+  #   repo2:
+  #     ...
+ 
+test:
+  <<:       *defaults
+  database: group_shelf_test
+ 
+  # repositories:
+  #   repo1:
+  #     database: sample_1_test.db
+ 
+production:
+  <<:       *defaults
+  database: group_shelf_production
+ 
+  # repositories:
+  #   repo1:
+  #     database: sample_production.db
+ 
+rake:
+  <<: *defaults
