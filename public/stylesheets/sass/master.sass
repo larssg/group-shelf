@@ -1,11 +1,5 @@
 #doc3
   :margin auto
-
-.clear
-  :clear both
-
-  hr
-    :display none
     
 .content
   :margin auto
@@ -29,7 +23,14 @@
       
 #menu
   :background-color #98CAD5
-
+  :overflow auto
+  :overflow -moz-scrollbars-none
+  // This makes ie6 get layout
+  :display inline-block
+  // and this puts it back to block
+  &
+    :display block
+    
   ul
     li
       :display inline
@@ -127,21 +128,37 @@
       :margin-left 70px
 
   .item
-    .image
-      :float left
-      :margin-right 1em
-      
-      img
-        :vertical-align bottom
-
-    .details
-      :margin-top 1em
+    .meta
+      :overflow auto
+      :overflow -moz-scrollbars-none
+      // This makes ie6 get layout
+      :display inline-block
+      // and this puts it back to block
+      &
+        :display block
     
-      label
-        :font-weight bold
-        
-      .added_date, .detail_link
+      .image
+        :float left
+        :margin-right 1em
+      
+        img
+          :vertical-align bottom
+
+      .details
         :margin-top 1em
+        :overflow auto
+        :overflow -moz-scrollbars-none
+        // This makes ie6 get layout
+        :display inline-block
+        // and this puts it back to block
+        &
+          :display block
+    
+        label
+          :font-weight bold
+        
+        .added_date, .detail_link
+          :margin-top 1em
 
     .description
       :border-top 1px dotted #999999
@@ -183,8 +200,8 @@
         :font-weight bold
         
       textarea
-        :width 30em
-        :height 7em
+        :width 695px
+        :height 10em
         
       input.text
         :width 30em
@@ -194,6 +211,17 @@
 
       input.medium
         :width 9em
+
+    .inline
+      :zoom 1
+      :display inline
+      :display -moz-inline-box
+      :display inline-block
+      :vertical-align top
+
+      .field
+        :float left
+        :margin-right 10px
 
 #ft
   :padding 20px

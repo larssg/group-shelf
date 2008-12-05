@@ -1,11 +1,6 @@
 #doc3 {
   margin: auto; }
 
-.clear {
-  clear: both; }
-  .clear hr {
-    display: none; }
-
 .content {
   margin: auto;
   width: 950px;
@@ -25,7 +20,12 @@
       color: #000000; }
 
 #menu {
-  background-color: #98CAD5; }
+  background-color: #98CAD5;
+  overflow: auto;
+  overflow: -moz-scrollbars-none;
+  display: inline-block; }
+  #menu {
+    display: block; }
   #menu ul li {
     display: inline; }
     #menu ul li a, #menu ul li span {
@@ -97,17 +97,28 @@
         text-decoration: none; }
     #bd .item-short .authors {
       margin-left: 70px; }
-  #bd .item .image {
-    float: left;
-    margin-right: 1em; }
-    #bd .item .image img {
-      vertical-align: bottom; }
-  #bd .item .details {
-    margin-top: 1em; }
-    #bd .item .details label {
-      font-weight: bold; }
-    #bd .item .details .added_date, #bd .item .details .detail_link {
-      margin-top: 1em; }
+  #bd .item .meta {
+    overflow: auto;
+    overflow: -moz-scrollbars-none;
+    display: inline-block; }
+    #bd .item .meta {
+      display: block; }
+    #bd .item .meta .image {
+      float: left;
+      margin-right: 1em; }
+      #bd .item .meta .image img {
+        vertical-align: bottom; }
+    #bd .item .meta .details {
+      margin-top: 1em;
+      overflow: auto;
+      overflow: -moz-scrollbars-none;
+      display: inline-block; }
+      #bd .item .meta .details {
+        display: block; }
+      #bd .item .meta .details label {
+        font-weight: bold; }
+      #bd .item .meta .details .added_date, #bd .item .meta .details .detail_link {
+        margin-top: 1em; }
   #bd .item .description {
     border-top: 1px dotted #999999;
     border-bottom: 1px dotted #999999;
@@ -137,14 +148,23 @@
       display: block;
       font-weight: bold; }
     #bd form .field textarea {
-      width: 30em;
-      height: 7em; }
+      width: 695px;
+      height: 10em; }
     #bd form .field input.text {
       width: 30em; }
     #bd form .field input.small {
       width: 4em; }
     #bd form .field input.medium {
       width: 9em; }
+  #bd form .inline {
+    zoom: 1;
+    display: inline;
+    display: -moz-inline-box;
+    display: inline-block;
+    vertical-align: top; }
+    #bd form .inline .field {
+      float: left;
+      margin-right: 10px; }
 
 #ft {
   padding: 20px;

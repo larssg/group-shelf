@@ -17,6 +17,7 @@ module GroupShelf
         data[:images] = []
         data[:images] << { :size => 'small', :url => "http://images.saxo.com/ItemImage.aspx?ItemID=#{item_id}&Height=75", :height => 75 }
         data[:images] << { :size => 'medium', :url => "http://images.saxo.com/ItemImage.aspx?ItemID=#{item_id}&Height=160", :height => 160 }
+        data[:images] << { :size => 'large', :url => "http://images.saxo.com/ItemImage.aspx?ItemID=#{item_id}&Height=500", :height => 500 }
 
         unless (item/:description/:subjects).innerHTML
           data[:description] = (item/:description).innerHTML.gsub('&lt;', '<').gsub('&gt;', '>').gsub('<br>', "\n").gsub('<br/>', "\n").gsub('&amp;', '&')

@@ -2,54 +2,53 @@
 - title @item.title
 
 .item
-  - image = @item.images.medium
-  - large_image = @item.images.large
-  - if image
-    - if large_image
-      .image= link_to item_image(image), large_image.url
-    - else
-      .image= item_image(image)
+  .meta
+    - image = @item.images.medium
+    - large_image = @item.images.large
+    - if image
+      - if large_image
+        .image= link_to item_image(image), large_image.url
+      - else
+        .image= item_image(image)
 
-  - if @item.stars > 0
-    .stars
-      ='&#9733;' * @item.stars + ((@item.stars == @item.stars.to_i) ? '' : '&#189;')
+    - if @item.stars > 0
+      .stars
+        ='&#9733;' * @item.stars + ((@item.stars == @item.stars.to_i) ? '' : '&#189;')
 
-  .authors{ :style => padding_style(image) }
-    by
-    = partial 'authors/list', :authors => @item.authors
+    - if @item.authors.size > 0
+      .authors{ :style => padding_style(image) }
+        by
+        = partial 'authors/list', :authors => @item.authors
 
-  .details{ :style => padding_style(image) }
-    - if @item.publisher
-      .publisher
-        %label Publisher:
-        = link_to @item.publisher.name, url(:publisher, @item.publisher)
+    .details{ :style => padding_style(image) }
+      - if @item.publisher
+        .publisher
+          %label Publisher:
+          = link_to @item.publisher.name, url(:publisher, @item.publisher)
 
-    - if @item.published
-      .published
-        %label Published:
-        = @item.published
+      - if @item.published
+        .published
+          %label Published:
+          = @item.published
   
-    - if @item.pages.to_i > 0
-      .pages
-        %label Pages:
-        = @item.pages
+      - if @item.pages.to_i > 0
+        .pages
+          %label Pages:
+          = @item.pages
 
-      - if @item.isbn and !@item.isbn_10.blank?
-        .isbn
-          %label ISBN:
-          = @item.isbn_10
+        - if @item.isbn and !@item.isbn_10.blank?
+          .isbn
+            %label ISBN:
+            = @item.isbn_10
     
-    .added_date
-      %label Added to library:
-      = @item.created_at
+      .added_date
+        %label Added to library:
+        = @item.created_at
       
-    - if @item.detail_url
-      .detail_link
-        = link_to 'More details', @item.detail_url, :target => '_blank'
-  
-  .clear
-    %hr
-  
+      - if @item.detail_url
+        .detail_link
+          = link_to 'More details', @item.detail_url, :target => '_blank'
+
   - if @item.description
     .description
       = @item.description

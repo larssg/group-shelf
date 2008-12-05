@@ -8,6 +8,7 @@
     = '&#9733;' * item.stars + ((item.stars == item.stars.to_i) ? '' : '&#189;')
 
   .title= link_to item.title, url(:item, item)
-  .authors
-    by
-    = partial 'authors/list', :authors => item.authors
+  - if item.authors.size > 0
+    .authors
+      by
+      = partial 'authors/list', :authors => item.authors
