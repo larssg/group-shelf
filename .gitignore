@@ -17,3 +17,4 @@ src/*
 .hg/*
 .svn/*
 config/providers.rb
+config/database.yml
