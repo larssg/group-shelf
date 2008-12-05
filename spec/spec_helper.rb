@@ -18,3 +18,5 @@ Spec::Runner.configure do |config|
   config.include(Merb::Test::RouteHelper)
   config.include(Merb::Test::ControllerHelper)
 end
+
+require Merb.root / :spec / :factories

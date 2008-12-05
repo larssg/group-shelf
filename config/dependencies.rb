@@ -27,3 +27,5 @@ dependency 'curb'
 dependency 'isbn-tools', :require_as => 'isbn/tools'
 dependency 'libxml-ruby', :require_as => 'xml/libxml'
 dependency 'hpricot'
+
+dependency 'thoughtbot-factory_girl', :require_as => 'factory_girl'
