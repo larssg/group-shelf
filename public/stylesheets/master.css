@@ -1,6 +1,9 @@
 #doc3 {
   margin: auto; }
 
+.yui-t5 #yui-main .yui-b {
+  margin-right: 20.4615em; }
+
 .content {
   margin: auto;
   width: 950px;
@@ -61,6 +64,7 @@
     font-weight: bold;
     padding-bottom: 15px; }
   #bd h2 {
+    color: #666666;
     font-weight: bold;
     padding-bottom: 1em; }
   #bd #messages {
@@ -89,7 +93,7 @@
       float: right; }
       #bd .item-short .stars .count {
         display: inline;
-        color: #666666; }
+        color: #999999; }
     #bd .item-short .title {
       font-weight: bold; }
       #bd .item-short .title a {
@@ -142,6 +146,10 @@
       #bd .item #reviews .review .user, #bd .item #reviews .review .age {
         display: inline;
         color: #666666; }
+  #bd #activity ul li {
+    margin-bottom: 1em; }
+    #bd #activity ul li .user {
+      color: #999999; }
   #bd form .field {
     margin-bottom: 1em; }
     #bd form .field label {

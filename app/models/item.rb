@@ -9,12 +9,15 @@ class Item
   property :description, Text
   property :published, Date
 
+  belongs_to :user
   belongs_to :publisher
 
   has(n, :reviews)
   has(n, :authorships)
   has(n, :authors, :through => :authorships)
   has(n, :images)
+
+  after :create, :record_activity
 
   default_scope(:default).update(:order => [:title.asc])
   
@@ -24,6 +27,10 @@ class Item
 
   def stars
     @stars ||= ((Review.avg(:score, :item_id => self.id) * 2).round / 2.0)
+  end
+
+  def record_activity
+    Activity::Submission.create(:item => self, :user => self.user)
   end
 end
 

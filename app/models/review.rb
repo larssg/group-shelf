@@ -11,5 +11,11 @@ class Review
 
   validates_present :user, :item
 
+  after :create, :record_activity
+
   default_scope(:default).update(:order => [:created_at.desc])
+
+  def record_activity
+    Activity::BookReview.create(:review => self, :user => self.user)
+  end
 end

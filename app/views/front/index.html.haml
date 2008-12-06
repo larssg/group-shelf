@@ -1,2 +1,20 @@
+%h2 Recently added items
 - @items.each do |item|
   = partial 'items/item', :item => item
+  
+- throw_content :sidebar do
+  #activity
+    %h2 Recent activity
+    %ul
+      - @activity.each do |activity|
+        - case activity
+        - when Activity::Submission
+          %li.submission
+            %span.user= activity.user.login
+            added
+            = link_to activity.item.title, url(:item, activity.item)
+        - when Activity::BookReview
+          %li.review
+            %span.user= activity.user.login
+            added a review for
+            = link_to activity.review.item.title, url(:item, activity.review.item)
