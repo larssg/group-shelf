@@ -2,7 +2,7 @@ class Items < Application
   # provides :xml, :yaml, :js
 
   def index
-    @items = Item.all
+    @items = Item.all(:limit => 10)
     display @items
   end
 

@@ -26,6 +26,11 @@
       :text-decoration none
       :color #000000
       
+  #search
+    :float right
+    :vertical-align middle
+    :padding-top 11px
+      
 #menu
   :background-color #98CAD5
   :overflow auto
@@ -104,14 +109,19 @@
 
   .item-short
     :margin-bottom 1em
-    :clear both
+    :overflow auto
+    :overflow -moz-scrollbars-none
+    // This makes ie6 get layout
+    :display inline-block
+    // and this puts it back to block
+    &
+      :display block
     
     .image
       :float left
       :width 60px
       :margin-right 10px
       :text-align right
-      :margin-bottom 1em
       
       img
         :vertical-align bottom
@@ -204,6 +214,10 @@
         
         .user
           :color #999999
+          
+  #search-results
+    .count
+      :margin-bottom 1em
 
   form
     .field

@@ -1,0 +1,22 @@
+- title 'Search results'
+
+#search-results
+  - if @items.size == 0 && @authors.size == 0
+    = "No results found searching for '#{h(params['q'])}'."
+  - else
+    - results = []
+    - results << "#{@items.size} items" if @items.size > 0
+    - results << "#{@authors.size} authors" if @authors.size > 0
+
+    .count= "Found #{results.join(' and ')} searching for '#{h(params['q'])}'."
+
+  - if @items.size > 0
+    %h2 Items
+    - @items.each do |item|
+      = partial 'items/item', :item => item
+
+  - if @authors.size > 0
+    %h2 Authors
+    %ul
+      - @authors.each do |author|
+        %li= link_to author.name, url(:author, author)

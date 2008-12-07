@@ -9,6 +9,11 @@
     #doc3{ :class => thrown_content?(:sidebar) ? 'yui-t5' : nil }
       #hd
         .content
+          #search
+            = form :action => url(:search), :method => :get do
+              = text_field :name => :q
+              = submit 'Search', :id => 'search-button', :style => 'display: none'
+
           %h1= link_to 'Group Shelf', '/'
           
       #menu

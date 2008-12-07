@@ -3,6 +3,8 @@ Merb::Router.prepare do
   authenticate do
     match('/').to(:controller => 'front', :action => 'index').name(:front)
 
+    match('/search').to(:controller => 'search', :action => 'index').name(:search)
+
     resources :items
     resources :locations
     resources :authors
